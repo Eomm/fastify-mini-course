@@ -1,0 +1,20 @@
+{
+  "name": "day-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "day-1": "node --watch ./day-1/app.js",
+    "mkdb": "mkdb"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^5.1.0",
+    "fastify-plugin": "^5.0.1",
+    "mkdb": "^0.0.9",
+    "pg": "^8.13.1"
+  }
+}
