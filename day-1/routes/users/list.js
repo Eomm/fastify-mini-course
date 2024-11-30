@@ -1,11 +1,10 @@
-import pg from "pg";
+import db from "../../plugins/db.js";
 
 export default async function (fastify, opts) {
-  const client = new pg.Client(opts.dbConfig);
-  await client.connect();
+  await fastify.register(db, opts);
 
   fastify.get("/users", async function () {
-    const { rows } = await client.query("SELECT * FROM users");
+    const { rows } = await fastify.db.query("SELECT * FROM users");
     return rows;
   });
 }
