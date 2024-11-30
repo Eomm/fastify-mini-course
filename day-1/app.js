@@ -20,7 +20,7 @@ const basicDBConfig = {
 
 const limitedDBConfig = {
   user: "limited_user",
-  password: "limited_user",
+  password: "limited_password",
   host: "127.0.0.1",
   port: 5432,
   database: "fastify",
