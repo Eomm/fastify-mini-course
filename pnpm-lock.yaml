@@ -213,8 +213,8 @@ packages:
   component-emitter@1.3.1:
     resolution: {integrity: sha512-T0+barUSQRTUQASh8bx02dl+DhF54GtIDY13Y3m9oWTklKbb3Wv974meRpeZ3lp1JpLVECWWNHC4vaG2XHXouQ==}
 
-  cookie@1.0.1:
-    resolution: {integrity: sha512-Xd8lFX4LM9QEEwxQpF9J9NTUh8pmdJO0cyRJhFiDoLTk2eH8FXlRv2IFGYVadZpqI3j8fhNrSdKCeYPxiAhLXw==}
+  cookie@1.0.2:
+    resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
     engines: {node: '>=18'}
 
   copy-descriptor@0.1.1:
@@ -941,7 +941,7 @@ snapshots:
 
   component-emitter@1.3.1: {}
 
-  cookie@1.0.1: {}
+  cookie@1.0.2: {}
 
   copy-descriptor@0.1.1: {}
 
@@ -1124,7 +1124,7 @@ snapshots:
 
   light-my-request@6.3.0:
     dependencies:
-      cookie: 1.0.1
+      cookie: 1.0.2
       process-warning: 4.0.0
       set-cookie-parser: 2.7.1
 

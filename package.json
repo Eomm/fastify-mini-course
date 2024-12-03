@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "day-1": "node --watch ./day-1/app.js",
+    "day-2": "node ./day-2/app.js",
     "mkdb": "mkdb"
   },
   "keywords": [],
