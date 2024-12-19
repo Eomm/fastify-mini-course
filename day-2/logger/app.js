@@ -12,6 +12,7 @@ app.addHook('preHandler', async function onRequestLogHook(req) {
   req.log.info({ req }, 'incoming request 🔮')
 })
 
+app.get('/formatter', { handler: formatError })
 app.get('/root', { handler: helloHandler, config: { logBody: true } })
 app.post('/sensitive', { handler: sensitiveHandler, config: { logBody: true } })
 
@@ -19,10 +20,18 @@ async function helloHandler(req, reply) {
   return { hello: 'world' }
 }
 
+async function formatError(req, reply) {
+  const obj = { big: 'object' }
+  req.log.debug(`Incorrect: ${JSON.stringify(obj)}`)
+  req.log.debug('Correct: %o', obj)
+  return { hello: 'world' }
+}
+
 async function sensitiveHandler(req, reply) {
   return { hello: 'world' }
 }
 
-app.inject('/root')
-app.inject({ url: '/sensitive', method: 'POST', body: { name: 'non-sensitive', password: 'hide-me-please' } })
+await app.inject('/formatter')
+await app.inject('/root')
+await app.inject({ url: '/sensitive', method: 'POST', body: { name: 'non-sensitive', password: 'hide-me-please' } })
 

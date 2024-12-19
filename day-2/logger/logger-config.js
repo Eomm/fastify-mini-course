@@ -15,7 +15,7 @@ export const loggerConfig = {
     ]
   },
   serializers: {
-    req: function (request) {
+    req: function(request) {
       const shouldLogBody = request.routeOptions.config.logBody === true
       return {
         method: request.method,
@@ -30,7 +30,7 @@ export const loggerConfig = {
         remotePort: request.socket?.remotePort
       }
     },
-    res: function (reply) {
+    res: function(reply) {
       return {
         statusCode: reply.statusCode,
         responseTime: reply.getResponseTime()
