@@ -6,16 +6,27 @@
   "type": "module",
   "scripts": {
     "day-1": "node --watch ./day-1/app.js",
-    "day-2": "node ./day-2/app.js",
-    "mkdb": "mkdb"
+    "day-2:config": "node ./day-2/reload-config/app.js",
+    "day-2:logger": "cross-env LOG_LEVEL=info node ./day-2/logger/app.js",
+    "day-3:test": "node --test ./day-3/test/**/*.test.js",
+    "day-3:start": "fastify start -l info ./day-3/app.js",
+    "day-3:dev": "fastify start -w -l info -P ./day-3/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/autoload": "^6.0.2",
+    "@fastify/env": "^5.0.1",
+    "@fastify/sensible": "^6.0.1",
+    "cross-env": "^7.0.3",
     "fastify": "^5.1.0",
+    "fastify-cli": "^7.0.1",
     "fastify-plugin": "^5.0.1",
-    "mkdb": "^0.0.9",
     "pg": "^8.13.1"
+  },
+  "packageManager": "pnpm@9.15.0+sha1.8bfdb6d72b4d5fdf87d21d27f2bfbe2b21dd2629",
+  "devDependencies": {
+    "pg-mem": "^3.0.4"
   }
 }
